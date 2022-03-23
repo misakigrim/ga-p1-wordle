@@ -34,6 +34,16 @@ body {
     width: 69px;
     height: 69px;
     margin-top: 8px;
+    color: azure;
+    text-align: center;
+    align-items: center;
+    font-size: 340%;
+    font-weight: bold;
+    background-color: none;
+    
+    transition-property: all;
+    transition-duration: 0.5s;
+
 }
 
 
@@ -57,4 +67,16 @@ h1, h4 {
     color:azure;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
+}
+
+.positional {
+    background-color: lightblue;
+}
+
+.correct {
+    background-color: green
+}
+
+.incorrect {
+    background-color: #222222;
 }
