@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap');
+
 button {
     height: 50px;
     width: 100%;
@@ -8,6 +11,10 @@ button {
     font-size: 130%;
     border: none;
     border-radius: 8px;
+}
+
+button:active {
+    transform: scale(1.3);
 }
 
 body {
@@ -46,6 +53,14 @@ body {
 
 }
 
+.filled {
+    animation: pulse 0.3s linear 1;
+}
+
+@keyframes pulse{
+    25%  {transform: scale(0.9);}
+    75%  {transform: scale(1.1);}
+}
 
 .row {
     display: flex;
@@ -63,20 +78,95 @@ body {
 }
 
 
-h1, h4 {
+h1 {
     color:azure;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Lalezar', cursive;    
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 5rem;
+    padding-bottom: 0;
+
 }
 
-.positional {
+h4 {
+    color:azure;
+    font-family: 'Red Hat Mono', monospace;    
+    text-align: center;
+    padding: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+.positional, #position-square {
     background-color: lightblue;
 }
 
-.correct {
+.correct, #correct-square {
     background-color: green
 }
 
 .incorrect {
     background-color: #222222;
+}
+
+.superCorrect {
+    background-color: #D4Af37
+}
+
+.tile2 {
+    border: 2px solid darkslategrey;
+    width: 69px;
+    height: 69px;
+    margin-top: 8px;
+    color: azure;
+    text-align: center;
+    align-items: center;
+    font-size: 340%;
+    font-weight: bold;
+    background-color: none;
+    
+    transition-property: all;
+    transition-duration: 2s;
+}
+
+
+#video {
+    margin: 0 auto;
+    position: absolute;
+}
+
+
+#top-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 115px;
+}
+
+#hint {
+    border: 1px dotted darkslategrey;
+    width: 500px;
+    height: 110%;
+    margin-top: -30px;
+}
+
+#legend {
+    margin-left: 20px;
+    font-size: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 127.5px;
+    margin-top: -30px;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    border: 1px solid green;
+    text-align: center;
+    margin: 0 auto;
 }

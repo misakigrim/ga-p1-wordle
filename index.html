@@ -8,9 +8,24 @@
     <script defer src="script.js"></script>
     <link href="style.css" rel="stylesheet">
 </head>
-<h1>Worst-dle</h1>
-<h4>Are you the worst?</h4>
+
 <body>
+    <h1>2017-2021-dle</h1>
+    <section id="top-container">
+        <div id="hint">
+            <h4>Hint:<br>
+                Words are !humble, it rumbles and mumbles,</br> if you hit a wall, please don't be disgruntled.</br>
+                This code was quite hard to write - I was jumbled. (It's also a card, but not one from your Uncle!)
+            </h4>
+        </div>
+        <div id="legend">
+            <div class="square" id="position-square"></div>
+                <h4>RIGHT LETTER,</br> WRONG POSITION.</h4>
+            <div class="square" id="correct-square"></div>
+                <h4>RIGHT LETTER,</br> RIGHT POSITION.</h4>
+        </div>
+    </section>
+
     <section class="game-container">
         <div class="game-row" id="row1">
             <div class="tile"></div>
@@ -82,7 +97,7 @@
             <button class="key">b</button>
             <button class="key">n</button>
             <button class="key">m</button>
-            <button id="delete">␡</button>
+            <button class="key" id="delete">␡</button>
         </div>
     </section>
 </body>
