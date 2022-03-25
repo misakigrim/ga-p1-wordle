@@ -14,11 +14,17 @@ for (let letter of keys) {
     letter.addEventListener('click', function() {
         const rowTiles = allRows[rowCount].children;
 
-        if (key == '␡' || key == '␡' && tileCount == 5) {
+        if (key == '␡' && tileCount == 0 && rowCount >= 1) {
+            rowCount--;
+            allRows[rowCount].children[4].textContent = "";
+            allRows[rowCount].children[4].classList.remove('filled');
+            tileCount += 4;
+        } else if (key == '␡' && tileCount == 0 && rowCount == 0) {
+            tileCount = 0;
+        } else if (key == '␡') {
             tileCount--;
             rowTiles[tileCount].textContent = "";
-        } else if (key == '␡' && tileCount == 0) {
-            tileCount = 0
+            rowTiles[tileCount].classList.remove('filled');
         } else if (tileCount < 5) {
             rowTiles[tileCount].textContent += key
             rowTiles[tileCount].classList.add('filled');
@@ -28,6 +34,10 @@ for (let letter of keys) {
         if (tileCount == 5) {
                 tileCount = 0;
                 rowCount ++;
+                console.log(tileCount)
+                console.log(rowCount)
+                console.log(rowTiles)
+                
         }
 
     
@@ -62,10 +72,13 @@ function test(rowId) {
                 }
             }
         }
+        // if (row[index].classList.contains('correct').textContent == row[index].classList.contains('positional').textContent) {
+        //     row[index].contains('positional').remove('positional');
+        // }
     }  
-    if (fullAnswer === row.textContent) {
-        // explode();
-    }  
+    // if (fullAnswer === row.textContent) {
+    //     // explode();
+    // }  
 }
 
 const submit = document.getElementById('enter')

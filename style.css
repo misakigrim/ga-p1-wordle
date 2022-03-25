@@ -134,8 +134,9 @@ h4 {
 
 
 #video {
-    margin: 0 auto;
-    position: absolute;
+    margin: 50px auto;
+    width: 850px;
+    justify-content: center;
 }
 
 
@@ -170,3 +171,4 @@ h4 {
     text-align: center;
     margin: 0 auto;
 }
+
