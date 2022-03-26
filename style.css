@@ -172,3 +172,12 @@ h4 {
     margin: 0 auto;
 }
 
+.refresh {
+    height: 100%;
+    width: 300px;
+    background-color: lightblue;
+    margin-left: 565px;
+
+    transition-property: all;
+    transition-duration: 3s;
+}

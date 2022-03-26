@@ -17,14 +17,14 @@ for (let letter of keys) {
         if (key == '␡' && tileCount == 0 && rowCount >= 1) {
             rowCount--;
             allRows[rowCount].children[4].textContent = "";
-            allRows[rowCount].children[4].classList.remove('filled');
+            allRows[rowCount].children[4].classList.remove('filled', 'positional', 'correct');
             tileCount += 4;
         } else if (key == '␡' && tileCount == 0 && rowCount == 0) {
             tileCount = 0;
         } else if (key == '␡') {
             tileCount--;
             rowTiles[tileCount].textContent = "";
-            rowTiles[tileCount].classList.remove('filled');
+            rowTiles[tileCount].classList.remove('filled', 'positional', 'correct');
         } else if (tileCount < 5) {
             rowTiles[tileCount].textContent += key
             rowTiles[tileCount].classList.add('filled');
@@ -33,11 +33,7 @@ for (let letter of keys) {
     
         if (tileCount == 5) {
                 tileCount = 0;
-                rowCount ++;
-                console.log(tileCount)
-                console.log(rowCount)
-                console.log(rowTiles)
-                
+                rowCount ++;  
         }
 
     
@@ -93,6 +89,20 @@ submit.addEventListener('click', function() {
     answerCheck('row3');
     answerCheck('row4');
     answerCheck('row5');
+    const lastRow = document.querySelectorAll('#row5 .tile')
+    const game = document.getElementById('game')
+    if ((!lastRow[4].classList.contains('superCorrect')) && (lastRow[4].classList.contains('filled'))){
+        const lose = document.createElement('h4')
+        lose.textContent = "Sorry, but you're out of guesses. Would you like to try again?"
+        game.insertAdjacentElement('afterEnd', lose); 
+        const button = document.createElement('button');
+        button.textContent = 'Start Over'
+        lose.insertAdjacentElement('afterEnd', button);
+        button.classList.add('refresh')
+        button.addEventListener('click', function() {
+            window.location.reload()
+        })
+    }
 })
 
 function answerCheck(rowId) {
